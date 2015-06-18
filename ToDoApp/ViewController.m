@@ -37,9 +37,14 @@
     [object setValue:self.todoDescription.text forKey:@"description"];
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            
+            self.todoTitle.text = nil;
+            self.todoDescription.text = nil;
+            
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"TODO" message:@"TODO saved!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
+        
     }];
     
 }
