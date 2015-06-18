@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import <Parse/Parse.h>
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *todoTitle;
+
+@property (weak, nonatomic) IBOutlet UITextView *todoDescription;
 
 @end
 
@@ -17,11 +22,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)save:(id)sender {
+    
+    PFObject *object = [PFObject objectWithClassName:@"TODO"];
+    [object setValue:self.todoTitle.text forKey:@"title"];
+    [object setValue:self.todoDescription.text forKey:@"description"];
+    [object saveInBackground];
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.todoDescription becomeFirstResponder];
+    return NO;
+}
+
+- (IBAction)tapOutside:(id)sender {
+    [self.todoTitle resignFirstResponder];
+    [self.todoDescription resignFirstResponder];
 }
 
 @end
