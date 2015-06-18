@@ -35,7 +35,12 @@
     PFObject *object = [PFObject objectWithClassName:@"TODO"];
     [object setValue:self.todoTitle.text forKey:@"title"];
     [object setValue:self.todoDescription.text forKey:@"description"];
-    [object saveInBackground];
+    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"TODO" message:@"TODO saved!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
     
 }
 
