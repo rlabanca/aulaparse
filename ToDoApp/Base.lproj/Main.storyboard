@@ -50,6 +50,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="todoTitle" destination="azQ-GU-1cR" id="qeB-65-buD"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="show" id="eKn-hb-mnz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,7 +62,7 @@
                     <navigationItem key="navigationItem" id="b1V-Ve-VNG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4MZ-Ag-7dn">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="prK-5E-HHQ"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="add" id="prK-5E-HHQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -153,7 +154,10 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="458" y="-175"/>
+            <point key="canvasLocation" x="634" y="223"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="prK-5E-HHQ"/>
+    </inferredMetricsTieBreakers>
 </document>

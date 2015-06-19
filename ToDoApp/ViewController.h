@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface ViewController : UIViewController<UITextFieldDelegate>
 
+@property (nonatomic, strong) PFObject *object;
 
 @end
 

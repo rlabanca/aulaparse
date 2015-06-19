@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <Parse/Parse.h>
 
 @interface ViewController ()
 
@@ -22,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.todoTitle.text = [self.object valueForKey:@"title"];
+    self.todoDescription.text = [self.object valueForKey:@"description"];
     
 }
 
