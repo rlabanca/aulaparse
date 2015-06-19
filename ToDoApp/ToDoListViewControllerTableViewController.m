@@ -9,7 +9,11 @@
 #import "ToDoListViewControllerTableViewController.h"
 #import "ToDoCellTableViewCell.h"
 
+#import <Parse/Parse.h>
+
 @interface ToDoListViewControllerTableViewController ()
+
+@property (nonatomic,strong) NSArray *todoList;
 
 @end
 
@@ -18,16 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    __weak __typeof(self) weakSelf = self;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    PFQuery *query = [PFQuery queryWithClassName:@"TODO"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        weakSelf.todoList = objects;
+        [weakSelf.tableView reloadData];
+    }];
 }
 
 #pragma mark - Table view data source
@@ -37,14 +38,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.todoList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ToDoCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToDoCell" forIndexPath:indexPath];
     
-    cell.todoTitle.text = @"Saporraê";
+    PFObject *object = [self.todoList objectAtIndex:indexPath.row];
+    
+    cell.todoTitle.text = [object valueForKey:@"title"];
     
     return cell;
     
