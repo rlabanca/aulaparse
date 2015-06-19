@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated {
     __weak __typeof(self) weakSelf = self;
     
     PFQuery *query = [PFQuery queryWithClassName:@"TODO"];
