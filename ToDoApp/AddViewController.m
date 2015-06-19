@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Rodrigo Labanca. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "AddViewController.h"
 
-@interface ViewController ()
+@interface AddViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *todoTitle;
 
@@ -16,14 +16,14 @@
 
 @end
 
-@implementation ViewController
+@implementation AddViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.todoTitle.text = [self.object valueForKey:@"title"];
-    self.todoDescription.text = [self.object valueForKey:@"description"];
+    self.todoTitle.text = [self.object objectForKey:@"title"];
+    self.todoDescription.text = [self.object objectForKey:@"description"];
     
 }
 

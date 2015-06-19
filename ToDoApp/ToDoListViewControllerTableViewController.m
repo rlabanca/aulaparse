@@ -8,14 +8,13 @@
 
 #import "ToDoListViewControllerTableViewController.h"
 #import "ToDoCellTableViewCell.h"
-#import "ViewController.m"
+#import "AddViewController.h"
 
 #import <Parse/Parse.h>
 
 @interface ToDoListViewControllerTableViewController ()
 
 @property (nonatomic,strong) NSArray *todoList;
-@property (nonatomic, strong) PFObject *selected;
 
 @end
 
@@ -60,14 +59,13 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"show"]) {
-        ViewController *controller = segue.destinationViewController;
-        controller.object = self.selected;
+        AddViewController *controller = segue.destinationViewController;
+        
+        NSInteger position = self.tableView.indexPathForSelectedRow.row;
+        PFObject *object = [self.todoList objectAtIndex:position];
+        
+        controller.object = object;
     }
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    self.selected = [self.todoList objectAtIndex:indexPath.row];
 }
 
 @end
