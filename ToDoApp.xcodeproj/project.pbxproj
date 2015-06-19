@@ -31,6 +31,7 @@
 		6A8AF0D31B33816000C2B463 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8AF0CE1B33816000C2B463 /* ParseFacebookUtils.framework */; };
 		6A8AF0D41B33816000C2B463 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8AF0CF1B33816000C2B463 /* ParseFacebookUtilsV4.framework */; };
 		6A8AF0D51B33816000C2B463 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8AF0D01B33816000C2B463 /* ParseUI.framework */; };
+		6A8AF0D81B33993B00C2B463 /* ToDoListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF0D71B33993B00C2B463 /* ToDoListViewControllerTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		6A8AF0CE1B33816000C2B463 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		6A8AF0CF1B33816000C2B463 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		6A8AF0D01B33816000C2B463 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		6A8AF0D61B33993B00C2B463 /* ToDoListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewControllerTableViewController.h; sourceTree = "<group>"; };
+		6A8AF0D71B33993B00C2B463 /* ToDoListViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewControllerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				6A8AF0951B337E9700C2B463 /* Images.xcassets */,
 				6A8AF0971B337E9700C2B463 /* LaunchScreen.xib */,
 				6A8AF0881B337E9700C2B463 /* Supporting Files */,
+				6A8AF0D61B33993B00C2B463 /* ToDoListViewControllerTableViewController.h */,
+				6A8AF0D71B33993B00C2B463 /* ToDoListViewControllerTableViewController.m */,
 			);
 			path = ToDoApp;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			files = (
 				6A8AF0911B337E9700C2B463 /* ViewController.m in Sources */,
 				6A8AF08E1B337E9700C2B463 /* AppDelegate.m in Sources */,
+				6A8AF0D81B33993B00C2B463 /* ToDoListViewControllerTableViewController.m in Sources */,
 				6A8AF08B1B337E9700C2B463 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
