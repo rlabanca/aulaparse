@@ -7,6 +7,7 @@
 //
 
 #import "ToDoListViewControllerTableViewController.h"
+#import "ToDoCellTableViewCell.h"
 
 @interface ToDoListViewControllerTableViewController ()
 
@@ -32,8 +33,6 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
@@ -43,7 +42,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToDoCell" forIndexPath:indexPath];
+    ToDoCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToDoCell" forIndexPath:indexPath];
+    
+    cell.todoTitle.text = @"Saporraê";
     
     return cell;
     
